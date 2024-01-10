@@ -3,9 +3,9 @@
 <head>
 <style>
 body {background-color: black;}
-h1 {text-align: center; color:white; font-family:Baskerville; font-size:50px;}
-p {text-align: center; color:white; font-family:Palatino Linotype; font-size:20px}
-div {text-align: center; color:white; }
+h1 {text-align: center; color:white; font-family:Garamond; font-size:50px;}
+p {text-align: center; color:white; font-family:Garamond; font-size:20px}
+div {text-align: center; color:white; display: block; margin-left: auto; margin-right: auto;}
 progress {
    display: block;
    width: 30%;
@@ -43,7 +43,7 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
 <p></p>
 <canvas id="myChart" style="width:75%;max-width:700px"></canvas>
 
-<script class="center">
+<script>
 const xLabels = {{ x_labels }};
 const yValues = {{ km_week }};
 new Chart("myChart", {
