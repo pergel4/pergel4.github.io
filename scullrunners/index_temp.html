@@ -30,13 +30,13 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
 <img src="swag-skeleton.gif"/>
 
 <div>
-<p> 978.0/32220 km </p>
-<progress value="978.0" max="32200">  </progress> 
+<p> {{km_total}}/32220 km </p>
+<progress value="{{km_total}}" max="32200">  </progress> 
 <p></p>
 <canvas id="myChart" style="width:75%;max-width:700px"></canvas>
 
-<input type="hidden"  id="x_labels" value="['1', '2']">
-<input type="hidden"  id="km_week" value="[631.1, 346.9]">
+<input type="hidden"  id="x_labels" value="{{ x_labels }}">
+<input type="hidden"  id="km_week" value="{{ km_week }}">
 <script>
 new Chart("myChart", {
   type: "bar",
@@ -74,3 +74,4 @@ new Chart("myChart", {
 
 </body>
 </html>
+
