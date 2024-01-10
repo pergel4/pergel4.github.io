@@ -66,14 +66,28 @@ new Chart("myChart", {
   },
   options: {
     responsive: true,
+    legend: {
+      labels: {
+          fontColor: "white",
+          fontSize: 18
+      }
+    },
     scales: {
         yAxes: [{
-            ticks: {
-                beginAtZero: true,
-            },
-            gridLines: {
-            display: true,
-            },
+          ticks: {
+              beginAtZero: true,
+              fontColor: "white",
+              fontSize: 14
+          },
+          gridLines: {
+          display: true,
+          },
+        }],
+        xAxes: [{
+          ticks: {
+            fontColor: "white",
+            fontSize: 14
+          }
         }]
     }
   },
