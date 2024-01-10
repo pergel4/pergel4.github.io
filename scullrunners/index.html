@@ -7,7 +7,9 @@ h1 {text-align: center; color:white; font-family:Palatino Linotype; font-size:50
 p {text-align: center; color:white; font-family:Palatino Linotype; font-size:20px}
 div {text-align: center; color:white; }
 progress {
-   width: 300px;
+   width: 30%;
+   margin-left: auto;
+   margin-right: auto;
    height : 25px;
    border: 2px solid gray;
 }
@@ -16,6 +18,11 @@ progress::-webkit-progress-bar {
 }
 progress::-webkit-progress-value {
    background-color: white;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 </style>
 <script
@@ -27,7 +34,7 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
 <body>
 <h1> Gubbens distansmål 2024 </h1>
 
-<img src="swag-skeleton.gif"/>
+<img src="swag-skeleton.gif", class="center"/>
 
 <div>
 <p> 978.0/32220 km </p>
@@ -35,21 +42,17 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
 <p></p>
 <canvas id="myChart" style="width:75%;max-width:700px"></canvas>
 
-<input type="hidden"  id="x_labels" value="['1', '2']">
-<input type="hidden"  id="km_week" value="[631.1, 346.9]">
 <script>
+const xLabels = ['1', '2'];
+const yValues = [631.1, 346.9];
 new Chart("myChart", {
   type: "bar",
   data: {
-    labels: [
-            document.querySelector('#x_labels').value
-    ],
+    labels: xLabels,
     datasets: [{
     	label: "Löpta kilometer per vecka",
         backgroundColor: "white",
-        data: [
-            document.querySelector('#km_week').value
-        ]
+        data: yValues
     }]
   },
   options: {
