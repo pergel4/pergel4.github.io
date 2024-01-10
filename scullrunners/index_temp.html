@@ -5,7 +5,11 @@
 body {background-color: black;}
 h1 {text-align: center; color:white; font-family:Garamond; font-size:50px;}
 p {text-align: center; color:white; font-family:Garamond; font-size:20px}
-div {text-align: center; color:white; display: block; margin-left: auto; margin-right: auto;}
+div {text-align: center; color:white;}
+.chart {
+  display: flex;
+  justify-content: center;
+}
 progress {
    display: block;
    width: 30%;
@@ -41,8 +45,11 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
 <p> {{km_total}}/32220 km </p>
 <progress value="{{km_total}}" max="32200">  </progress> 
 <p></p>
-<canvas id="myChart" style="width:75%;max-width:700px"></canvas>
 
+</div>
+
+<div class="chart">
+<canvas id="myChart" style="width:75%;max-width:700px"></canvas>
 <script>
 const xLabels = {{ x_labels }};
 const yValues = {{ km_week }};
@@ -52,8 +59,9 @@ new Chart("myChart", {
     labels: xLabels,
     datasets: [{
     	label: "Löpta kilometer per vecka",
-        backgroundColor: "white",
-        data: yValues
+      backgroundColor: "white",
+      data: yValues,
+      color: "white"
     }]
   },
   options: {
@@ -62,11 +70,9 @@ new Chart("myChart", {
         yAxes: [{
             ticks: {
                 beginAtZero: true,
-                color: "white"
             },
             gridLines: {
-            display: true ,
-            color: "white"
+            display: true,
             },
         }]
     }
