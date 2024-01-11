@@ -36,7 +36,7 @@ def get_stats():
     with open('stats.json', 'w') as file:
         if stats:
             for key, value in new_stats.items():
-                stats[key] = value
+                stats[key] = round(value,2)
             json.dump(stats, file)
         else:
             json.dump(new_stats, file)
