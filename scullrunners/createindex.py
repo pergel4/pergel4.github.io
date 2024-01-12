@@ -54,7 +54,7 @@ def write_file():
         km_week.append(value)
 
     context = {
-        "km_total": km_total,
+        "km_total": round(km_total,2),
         "x_labels": weeks,
         "km_week": km_week
     }
