@@ -53,7 +53,10 @@ def write_file():
         weeks.append(key)
         km_week.append(value)
 
+    date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
     context = {
+        "date": date,
         "km_total": round(km_total,2),
         "x_labels": weeks,
         "km_week": km_week
