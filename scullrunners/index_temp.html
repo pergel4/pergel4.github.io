@@ -30,9 +30,8 @@ progress::-webkit-progress-value {
   margin-right: auto;
 }
 </style>
-<script
-src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/1.4.0/chartjs-plugin-annotation.js"></script>
 </head>
 
 
@@ -90,16 +89,18 @@ new Chart("myChart", {
           }
         }]
     },
-    annotation: {
-        annotations: [{
+    plugins: {
+      annotation: {
+        annotations: {
+          line: {
             type: 'line',
-            mode: 'horizontal',
-            scaleID: 'y-axis-0',
-            value: '696',
-            borderColor: 'tomato',
-            borderWidth: 1
-        }],
-        drawTime: "afterDraw" // (default)
+            yMin: 696,
+            yMax: 696,
+            borderWidth: 2,
+            borderColor: 'red'
+          }
+        }
+      }
     }
   },
 });
