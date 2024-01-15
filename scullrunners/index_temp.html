@@ -5,7 +5,7 @@
 body {background-color: black;}
 h1 {text-align: center; color:white; font-family:Garamond; font-size:50px;}
 p {text-align: center; color:white; font-family:Garamond;}
-div {text-align: center; color:white; font-family:Garamond}
+div {text-align: center; font-family:Garamond}
 .chart {
   display: flex;
   justify-content: center;
@@ -24,6 +24,15 @@ progress::-webkit-progress-bar {
 progress::-webkit-progress-value {
    background-color: white;
 }
+progress::before {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 2px;
+  height: 100%;
+  background: red;
+  left: calc(var(--x) - 1px)
+}
 .center {
   display: block;
   margin-left: auto;
@@ -31,7 +40,6 @@ progress::-webkit-progress-value {
 }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/1.4.0/chartjs-plugin-annotation.js"></script>
 </head>
 
 
@@ -42,7 +50,7 @@ progress::-webkit-progress-value {
 
 <div>
 <p style="font-size:20px;"> {{km_total}}/32200 km </p>
-<progress value="{{km_total}}" max="32200">  </progress> 
+<progress value="{{km_total}}" max="32200" style="--x: {{pct_goal_today}}%">  </progress> 
 <p></p>
 
 </div>
@@ -72,35 +80,22 @@ new Chart("myChart", {
       }
     },
     scales: {
-        yAxes: [{
-          ticks: {
-              beginAtZero: true,
-              fontColor: "white",
-              fontSize: 14
-          },
-          gridLines: {
-          display: true,
-          },
-        }],
-        xAxes: [{
-          ticks: {
+      yAxes: [{
+        ticks: {
+            beginAtZero: true,
             fontColor: "white",
             fontSize: 14
-          }
-        }]
-    },
-    plugins: {
-      annotation: {
-        annotations: {
-          line: {
-            type: 'line',
-            yMin: 696,
-            yMax: 696,
-            borderWidth: 2,
-            borderColor: 'red'
-          }
+        },
+        gridLines: {
+        display: true,
+        },
+      }],
+      xAxes: [{
+        ticks: {
+          fontColor: "white",
+          fontSize: 14
         }
-      }
+      }]
     }
   },
 });
@@ -108,7 +103,7 @@ new Chart("myChart", {
 
 </div>
 
-<p style="font-size:14px;"> Senast uppdaterad: {{date}}</p>
+<p style="font-size:14px;"> Senast uppdaterad: {{update}}</p>
 
 </body>
 </html>

@@ -5,6 +5,7 @@ from jinja2 import Environment, FileSystemLoader
 
 # Constants
 CLUB_LEAD_URL = "https://www.strava.com/clubs/495789/leaderboard"
+TOTAL_DAYS = 324 # Dagnummer för 19/11
 
 def get_week_nr():
     date_today = datetime.date.today()
@@ -53,10 +54,14 @@ def write_file():
         weeks.append(key)
         km_week.append(value)
 
-    date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    time_now = datetime.datetime.now()
+    update = time_now.strftime("%Y-%m-%d %H:%M:%S")
+    day_nr = time_now.timetuple().tm_yday
+    pct_goal_today = round(day_nr/TOTAL_DAYS*100,2)
 
     context = {
-        "date": date,
+        "update": update,
+        "pct_goal_today": pct_goal_today,
         "km_total": round(km_total,2),
         "x_labels": weeks,
         "km_week": km_week
