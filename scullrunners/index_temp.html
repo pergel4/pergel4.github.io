@@ -10,7 +10,7 @@ div {text-align: center; font-family:Garamond}
   display: flex;
   justify-content: center;
 }
-progress {
+.progress {
    display: block;
    width: 30%;
    margin-left: auto;
@@ -23,15 +23,6 @@ progress::-webkit-progress-bar {
 }
 progress::-webkit-progress-value {
    background-color: white;
-}
-progress::after {
-  position: absolute;
-  content: "";
-  display: block;
-  width: 2px;
-  height: 100%;
-  background: red;
-  left: calc(var(--x) - 1px)
 }
 .center {
   display: block;
@@ -48,9 +39,9 @@ progress::after {
 
 <img src="swag-skeleton.gif", class="center"/>
 
-<div>
 <p style="font-size:20px;"> {{km_total}}/32200 km </p>
-<progress value="{{km_total}}" max="32200" style="--x: {{pct_goal_today}}%">  </progress> 
+<div>
+<progress value="{{km_total}}" max="32200">  </progress> 
 <p></p>
 
 </div>
