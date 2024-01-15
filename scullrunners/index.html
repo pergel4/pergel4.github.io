@@ -42,8 +42,8 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
 <img src="swag-skeleton.gif", class="center"/>
 
 <div>
-<p style="font-size:20px;"> 1506.6/32200 km </p>
-<progress value="1506.6" max="32200">  </progress> 
+<p style="font-size:20px;"> 1602.0/32200 km </p>
+<progress value="1602.0" max="32200">  </progress> 
 <p></p>
 
 </div>
@@ -52,7 +52,7 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
 <canvas id="myChart" style="width:75%;max-width:700px"></canvas>
 <script>
 const xLabels = ['1', '2', '3'];
-const yValues = [631.1, 865.7, 9.8];
+const yValues = [631.1, 865.7, 105.2];
 new Chart("myChart", {
   type: "bar",
   data: {
@@ -89,6 +89,17 @@ new Chart("myChart", {
             fontSize: 14
           }
         }]
+    },
+    annotation: {
+        annotations: [{
+            type: 'line',
+            mode: 'horizontal',
+            scaleID: 'y-axis-0',
+            value: '696',
+            borderColor: 'tomato',
+            borderWidth: 1
+        }],
+        drawTime: "afterDraw" // (default)
     }
   },
 });
@@ -96,7 +107,7 @@ new Chart("myChart", {
 
 </div>
 
-<p style="font-size:14px;"> Senast uppdaterad: 2024-01-15 10:13:47</p>
+<p style="font-size:14px;"> Senast uppdaterad: 2024-01-15 20:20:53</p>
 
 </body>
 </html>
