@@ -35,10 +35,9 @@ progress::-webkit-progress-value {
 .pctVerticalBar{
   position: absolute;
   height: 25px;
-  width: 2px;
+  width: 1px;
   background: red;
   top: 2px;
-  left: calc(var(--x) - 1px);
 }
 #myProgressBar {
   height: 25px;
@@ -66,7 +65,7 @@ progress::-webkit-progress-value {
 
 <div id="progressStatus">
   <div id="myProgressBar" style="width:{{pct_total_today}}%;"></div>
-  <div class="pctVerticalBar" style="--x: {{pct_goal_today}}%"></div>
+  <div class="pctVerticalBar" style="left:{{pct_goal_today}}%"></div>
 </div>
 
 <div class="chart">
