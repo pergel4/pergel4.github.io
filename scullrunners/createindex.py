@@ -63,9 +63,6 @@ def write_file():
         else:
             real_tot_week.append(round(real_tot_week[int(key)-2]-value,2))
 
-    print(goal_tot_week)
-    print(real_tot_week)
-
     time_now = datetime.datetime.now()
     update = time_now.strftime("%Y-%m-%d %H:%M:%S")
     day_nr = time_now.timetuple().tm_yday
