@@ -47,13 +47,24 @@ def write_file():
     with open('stats.json', 'r') as file:
         stats = json.load(file)
 
+    # Fixa variabler till html-fil
     km_total = 0
     weeks = []
     km_week = []
+    real_tot_week = []
+    goal_tot_week = []
     for key, value in stats.items():
         km_total += value
         weeks.append(key)
         km_week.append(value)
+        goal_tot_week.append(round(GOAL_DISTANCE - int(key)*7/TOTAL_DAYS * GOAL_DISTANCE,2))
+        if int(key) == 1:
+            real_tot_week.append(round(GOAL_DISTANCE-value,2))
+        else:
+            real_tot_week.append(round(real_tot_week[int(key)-2]-value,2))
+
+    print(goal_tot_week)
+    print(real_tot_week)
 
     time_now = datetime.datetime.now()
     update = time_now.strftime("%Y-%m-%d %H:%M:%S")
@@ -61,15 +72,19 @@ def write_file():
     pct_goal_today = round(day_nr/TOTAL_DAYS*100,2)
     pct_total_today = round(km_total/GOAL_DISTANCE*100,2)
 
+    # Skapa dict för html-variabler
     context = {
-        "update": update,
-        "pct_goal_today": pct_goal_today,
-        "pct_total_today": pct_total_today,
         "km_total": round(km_total,2),
-        "x_labels": weeks,
-        "km_week": km_week
+        "pct_total_today": pct_total_today,
+        "pct_goal_today": pct_goal_today,
+        "week_nr": weeks,
+        "km_week": km_week,
+        "real_tot_week": real_tot_week,
+        "goal_tot_week": goal_tot_week,
+        "update": update
     }
 
+    # Sätt ihop html-fil
     template = Environment(loader=FileSystemLoader("./")).get_template("index_temp.html")
     with open('index.html', 'w') as file:
         file.write(template.render(context))

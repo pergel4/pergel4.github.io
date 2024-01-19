@@ -10,19 +10,8 @@ div {text-align: center; font-family:Garamond}
   display: flex;
   justify-content: center;
 }
-progress {
-   display: block;
-   width: 30%;
-   margin-left: auto;
-   margin-right: auto;
-   height : 25px;
-   border: 2px solid gray;
-}
-progress::-webkit-progress-bar {
-   background-color: gray;
-}
-progress::-webkit-progress-value {
-   background-color: white;
+.bottomSpace {
+     margin-bottom: 1cm;
 }
 #progressStatus {
   width: 30%;
@@ -67,21 +56,75 @@ progress::-webkit-progress-value {
   <div id="myProgressBar" style="width:{{pct_total_today}}%;"></div>
   <div class="pctVerticalBar" style="left:{{pct_goal_today}}%"></div>
 </div>
+<p class=bottomSpace></p>
 
+<div>
+<p></p>
 <div class="chart">
-<canvas id="myChart" style="width:75%;max-width:700px"></canvas>
+<canvas id="lineChart" style="width:75%;max-width:700px"></canvas>
+</div>
+<p class=bottomSpace></p>
+<div class="chart">
+<canvas id="barChart" style="width:75%;max-width:700px"></canvas>
+</div>
 <script>
-const xLabels = {{ x_labels }};
-const yValues = {{ km_week }};
-new Chart("myChart", {
+const week_nr = {{ week_nr }};
+const km_week = {{ km_week }};
+new Chart("barChart", {
   type: "bar",
   data: {
-    labels: xLabels,
+    labels: week_nr,
     datasets: [{
     	label: "Löpta kilometer per vecka",
       backgroundColor: "white",
-      data: yValues,
+      data: km_week,
       color: "white"
+    }]
+  },
+  options: {
+    responsive: true,
+    legend: {
+      labels: {
+          fontColor: "white",
+          fontSize: 18
+      }
+    },
+    scales: {
+      yAxes: [{
+        ticks: {
+            beginAtZero: true,
+            fontColor: "white",
+            fontSize: 14
+        },
+        gridLines: {
+        display: true,
+        },
+      }],
+      xAxes: [{
+        ticks: {
+          fontColor: "white",
+          fontSize: 14
+        }
+      }]
+    }
+  },
+});
+const real_tot_week = {{ real_tot_week }};
+const goal_tot_week = {{ goal_tot_week }};
+new Chart("lineChart", {
+  type: "line",
+  data: {
+    labels: week_nr,
+    datasets: [{
+    label: "Faktisk kvarstående sträcka",
+    borderColor: "white",
+    data: real_tot_week,
+    color: "white"
+    },{
+    label: "Linjärt löpmål",
+    borderColor: "red",
+    data: goal_tot_week,
+    color: "red"
     }]
   },
   options: {
@@ -120,4 +163,3 @@ new Chart("myChart", {
 
 </body>
 </html>
-

@@ -10,19 +10,8 @@ div {text-align: center; font-family:Garamond}
   display: flex;
   justify-content: center;
 }
-progress {
-   display: block;
-   width: 30%;
-   margin-left: auto;
-   margin-right: auto;
-   height : 25px;
-   border: 2px solid gray;
-}
-progress::-webkit-progress-bar {
-   background-color: gray;
-}
-progress::-webkit-progress-value {
-   background-color: white;
+.bottomSpace {
+     margin-bottom: 1cm;
 }
 #progressStatus {
   width: 30%;
@@ -61,27 +50,81 @@ progress::-webkit-progress-value {
 
 <img src="swag-skeleton.gif", class="center"/>
 
-<p style="font-size:20px;"> 1750.4/32200 km </p>
+<p style="font-size:20px;"> 1964.2/32200 km </p>
 
 <div id="progressStatus">
-  <div id="myProgressBar" style="width:5.44%;"></div>
-  <div class="pctVerticalBar" style="left:5.25%"></div>
+  <div id="myProgressBar" style="width:6.1%;"></div>
+  <div class="pctVerticalBar" style="left:5.86%"></div>
 </div>
+<p class=bottomSpace></p>
 
+<div>
+<p></p>
 <div class="chart">
-<canvas id="myChart" style="width:75%;max-width:700px"></canvas>
+<canvas id="lineChart" style="width:75%;max-width:700px"></canvas>
+</div>
+<p class=bottomSpace></p>
+<div class="chart">
+<canvas id="barChart" style="width:75%;max-width:700px"></canvas>
+</div>
 <script>
-const xLabels = ['1', '2', '3'];
-const yValues = [631.1, 870.2, 249.1];
-new Chart("myChart", {
+const week_nr = ['1', '2', '3'];
+const km_week = [631.1, 882.4, 450.7];
+new Chart("barChart", {
   type: "bar",
   data: {
-    labels: xLabels,
+    labels: week_nr,
     datasets: [{
     	label: "Löpta kilometer per vecka",
       backgroundColor: "white",
-      data: yValues,
+      data: km_week,
       color: "white"
+    }]
+  },
+  options: {
+    responsive: true,
+    legend: {
+      labels: {
+          fontColor: "white",
+          fontSize: 18
+      }
+    },
+    scales: {
+      yAxes: [{
+        ticks: {
+            beginAtZero: true,
+            fontColor: "white",
+            fontSize: 14
+        },
+        gridLines: {
+        display: true,
+        },
+      }],
+      xAxes: [{
+        ticks: {
+          fontColor: "white",
+          fontSize: 14
+        }
+      }]
+    }
+  },
+});
+const real_tot_week = [31568.9, 30686.5, 30235.8];
+const goal_tot_week = [31504.32, 30808.64, 30112.96];
+new Chart("lineChart", {
+  type: "line",
+  data: {
+    labels: week_nr,
+    datasets: [{
+    label: "Faktisk kvarstående sträcka",
+    borderColor: "white",
+    data: real_tot_week,
+    color: "white"
+    },{
+    label: "Linjärt löpmål",
+    borderColor: "red",
+    data: goal_tot_week,
+    color: "red"
     }]
   },
   options: {
@@ -116,7 +159,7 @@ new Chart("myChart", {
 
 </div>
 
-<p style="font-size:14px;"> Senast uppdaterad: 2024-01-17 17:14:09</p>
+<p style="font-size:14px;"> Senast uppdaterad: 2024-01-19 17:13:16</p>
 
 </body>
 </html>
