@@ -64,14 +64,18 @@ def write_file():
             real_tot_week.append(round(real_tot_week[int(key)-2]-value,2))
 
     time_now = datetime.datetime.now()
-    update = time_now.strftime("%Y-%m-%d %H:%M:%S")
     day_nr = time_now.timetuple().tm_yday
-    pct_goal_today = round(day_nr/TOTAL_DAYS*100,2)
+    pct_days_past = day_nr/TOTAL_DAYS
+    pct_goal_today = round(pct_days_past*100,2)
     pct_total_today = round(km_total/GOAL_DISTANCE*100,2)
+    km_goal = round(pct_days_past * GOAL_DISTANCE,2)
+
+    update = time_now.strftime("%Y-%m-%d %H:%M:%S")
 
     # Skapa dict för html-variabler
     context = {
         "km_total": round(km_total,2),
+        "km_goal": round(km_goal,2),
         "pct_total_today": pct_total_today,
         "pct_goal_today": pct_goal_today,
         "week_nr": weeks,
