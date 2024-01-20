@@ -4,7 +4,7 @@
 <style>
 body {background-color: black;}
 h1 {text-align: center; color:white; font-family:Garamond; font-size:50px;}
-p {text-align: center; color:white; font-family:Garamond;}
+p {text-align: center; font-family:Garamond;}
 div {text-align: center; font-family:Garamond}
 .chart {
   display: flex;
@@ -50,14 +50,17 @@ div {text-align: center; font-family:Garamond}
 
 <img src="swag-skeleton.gif", class="center"/>
 
-<p style="font-size:20px;"> 1964.2/32200 km </p>
+<p style="font-size:26px;color:white;"> Dagsstatus: </p>
+<p style="font-size:20px;color:white;"> Sprungit hittills: 2081.4/32200 km </p>
+<p style="font-size:20px;color:red;"> Dagsmål: 2081.4/32200 km </p>
 
 <div id="progressStatus">
-  <div id="myProgressBar" style="width:6.1%;"></div>
-  <div class="pctVerticalBar" style="left:5.86%"></div>
+  <div id="myProgressBar" style="width:6.46%;"></div>
+  <div class="pctVerticalBar" style="left:6.17%"></div>
 </div>
 <p class=bottomSpace></p>
 
+<p style="font-size:26px;color:white;"> Veckostatus: </p>
 <div>
 <p></p>
 <div class="chart">
@@ -69,7 +72,7 @@ div {text-align: center; font-family:Garamond}
 </div>
 <script>
 const week_nr = ['1', '2', '3'];
-const km_week = [631.1, 882.4, 450.7];
+const km_week = [631.1, 882.4, 567.9];
 new Chart("barChart", {
   type: "bar",
   data: {
@@ -109,7 +112,7 @@ new Chart("barChart", {
     }
   },
 });
-const real_tot_week = [31568.9, 30686.5, 30235.8];
+const real_tot_week = [31568.9, 30686.5, 30118.6];
 const goal_tot_week = [31504.32, 30808.64, 30112.96];
 new Chart("lineChart", {
   type: "line",
@@ -121,7 +124,7 @@ new Chart("lineChart", {
     data: real_tot_week,
     color: "white"
     },{
-    label: "Linjärt löpmål",
+    label: "Linjärt löpmål - vecka",
     borderColor: "red",
     data: goal_tot_week,
     color: "red"
@@ -158,7 +161,7 @@ new Chart("lineChart", {
 
 </div>
 
-<p style="font-size:14px;"> Senast uppdaterad: 2024-01-19 17:24:54</p>
+<p style="font-size:14px;color:white;"> Senast uppdaterad: 2024-01-20 15:57:44</p>
 
 </body>
 </html>

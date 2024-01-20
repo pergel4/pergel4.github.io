@@ -4,7 +4,7 @@
 <style>
 body {background-color: black;}
 h1 {text-align: center; color:white; font-family:Garamond; font-size:50px;}
-p {text-align: center; color:white; font-family:Garamond;}
+p {text-align: center; font-family:Garamond;}
 div {text-align: center; font-family:Garamond}
 .chart {
   display: flex;
@@ -50,7 +50,9 @@ div {text-align: center; font-family:Garamond}
 
 <img src="swag-skeleton.gif", class="center"/>
 
-<p style="font-size:20px;"> {{km_total}}/32200 km </p>
+<p style="font-size:26px;color:white;"> Dagsstatus: </p>
+<p style="font-size:20px;color:white;"> Sprungit hittills: {{km_total}}/32200 km </p>
+<p style="font-size:20px;color:red;"> Dagsmål: {{km_total}}/32200 km </p>
 
 <div id="progressStatus">
   <div id="myProgressBar" style="width:{{pct_total_today}}%;"></div>
@@ -58,6 +60,7 @@ div {text-align: center; font-family:Garamond}
 </div>
 <p class=bottomSpace></p>
 
+<p style="font-size:26px;color:white;"> Veckostatus: </p>
 <div>
 <p></p>
 <div class="chart">
@@ -121,7 +124,7 @@ new Chart("lineChart", {
     data: real_tot_week,
     color: "white"
     },{
-    label: "Linjärt löpmål",
+    label: "Linjärt löpmål - vecka",
     borderColor: "red",
     data: goal_tot_week,
     color: "red"
@@ -158,7 +161,7 @@ new Chart("lineChart", {
 
 </div>
 
-<p style="font-size:14px;"> Senast uppdaterad: {{update}}</p>
+<p style="font-size:14px;color:white;"> Senast uppdaterad: {{update}}</p>
 
 </body>
 </html>
