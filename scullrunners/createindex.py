@@ -51,8 +51,8 @@ def write_file():
     km_total = 0
     weeks = []
     km_week = []
-    real_tot_week = []
-    goal_tot_week = []
+    real_tot_week = [32200]
+    goal_tot_week = [32200]
     for key, value in stats.items():
         km_total += value
         weeks.append(key)
@@ -78,6 +78,7 @@ def write_file():
         "km_goal": round(km_goal,2),
         "pct_total_today": pct_total_today,
         "pct_goal_today": pct_goal_today,
+        "line_chart_weeks": ['0']+weeks,
         "week_nr": weeks,
         "km_week": km_week,
         "real_tot_week": real_tot_week,

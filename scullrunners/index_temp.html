@@ -112,12 +112,13 @@ new Chart("barChart", {
     }
   },
 });
+const line_chart_weeks = {{ line_chart_weeks }};
 const real_tot_week = {{ real_tot_week }};
 const goal_tot_week = {{ goal_tot_week }};
 new Chart("lineChart", {
   type: "line",
   data: {
-    labels: week_nr,
+    labels: line_chart_weeks,
     datasets: [{
     label: "Faktisk kvarstående sträcka",
     borderColor: "white",

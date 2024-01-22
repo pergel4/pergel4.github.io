@@ -112,12 +112,13 @@ new Chart("barChart", {
     }
   },
 });
-const real_tot_week = [31568.9, 30686.5, 29880.1, 29799.7];
-const goal_tot_week = [31504.32, 30808.64, 30112.96, 29417.28];
+const line_chart_weeks = ['0', '1', '2', '3', '4'];
+const real_tot_week = [32200, 31568.9, 31317.6, 30762.5, 31237.2];
+const goal_tot_week = [32200, 31504.32, 30808.64, 30112.96, 29417.28];
 new Chart("lineChart", {
   type: "line",
   data: {
-    labels: week_nr,
+    labels: line_chart_weeks,
     datasets: [{
     label: "Faktisk kvarstående sträcka",
     borderColor: "white",
@@ -161,7 +162,7 @@ new Chart("lineChart", {
 
 </div>
 
-<p style="font-size:14px;color:white;"> Senast uppdaterad: 2024-01-22 21:08:45</p>
+<p style="font-size:14px;color:white;"> Senast uppdaterad: 2024-01-22 21:33:00</p>
 
 </body>
 </html>
