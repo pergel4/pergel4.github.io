@@ -58,10 +58,7 @@ def write_file():
         weeks.append(key)
         km_week.append(value)
         goal_tot_week.append(round(GOAL_DISTANCE - int(key)*7/TOTAL_DAYS * GOAL_DISTANCE,2))
-        if int(key) == 1:
-            real_tot_week.append(round(GOAL_DISTANCE-value,2))
-        else:
-            real_tot_week.append(round(real_tot_week[int(key)-2]-value,2))
+        real_tot_week.append(round(real_tot_week[int(key)-1]-value,2))
 
     time_now = datetime.datetime.now()
     day_nr = time_now.timetuple().tm_yday
