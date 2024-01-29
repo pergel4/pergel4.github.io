@@ -51,12 +51,12 @@ div {text-align: center; font-family:Garamond}
 <img src="swag-skeleton.gif", class="center"/>
 
 <p style="font-size:22px;color:white;"> Dagsstatus: </p>
-<p style="font-size:14px;color:white;"> Sprungit hittills: 3028.0/32200 km </p>
-<p style="font-size:14px;color:red;"> Dagsmål: 2782.72/32200 km </p>
+<p style="font-size:14px;color:white;"> Sprungit hittills: 3229.0/32200 km </p>
+<p style="font-size:14px;color:red;"> Dagsmål: 2882.1/32200 km </p>
 
 <div id="progressStatus">
-  <div id="myProgressBar" style="width:9.4%;"></div>
-  <div class="pctVerticalBar" style="left:8.64%"></div>
+  <div id="myProgressBar" style="width:10.03%;"></div>
+  <div class="pctVerticalBar" style="left:8.95%"></div>
 </div>
 <p class=bottomSpace></p>
 
@@ -71,8 +71,8 @@ div {text-align: center; font-family:Garamond}
 <canvas id="barChart" style="width:75%;max-width:700px"></canvas>
 </div>
 <script>
-const week_nr = ['1', '2', '3', '4'];
-const km_week = [631.1, 882.4, 835.4, 679.1];
+const week_nr = ['1', '2', '3', '4', '5'];
+const km_week = [631.1, 882.4, 835.4, 784.0, 96.1];
 new Chart("barChart", {
   type: "bar",
   data: {
@@ -112,9 +112,9 @@ new Chart("barChart", {
     }
   },
 });
-const line_chart_weeks = ['0', '1', '2', '3', '4'];
-const real_tot_week = [32200, 31568.9, 30686.5, 29851.1, 29172.0];
-const goal_tot_week = [32200, 31504.32, 30808.64, 30112.96, 29417.28];
+const line_chart_weeks = ['0', '1', '2', '3', '4', '5'];
+const real_tot_week = [32200, 31568.9, 30686.5, 29851.1, 29067.1, 28971.0];
+const goal_tot_week = [32200, 31504.32, 30808.64, 30112.96, 29417.28, 28721.6];
 new Chart("lineChart", {
   type: "line",
   data: {
@@ -162,7 +162,7 @@ new Chart("lineChart", {
 
 </div>
 
-<p style="font-size:14px;color:white;"> Senast uppdaterad: 2024-01-28 15:16:53</p>
+<p style="font-size:14px;color:white;"> Senast uppdaterad: 2024-01-29 20:33:57</p>
 
 </body>
 </html>
