@@ -51,12 +51,12 @@ div {text-align: center; font-family:Garamond}
 <img src="swag-skeleton.gif", class="center"/>
 
 <p style="font-size:22px;color:white;"> Dagsstatus: </p>
-<p style="font-size:14px;color:white;"> Sprungit hittills: 6260.9/32200 km </p>
-<p style="font-size:14px;color:red;"> Dagsmål: 5565.43/32200 km </p>
+<p style="font-size:14px;color:white;"> Sprungit hittills: 6506.1/32200 km </p>
+<p style="font-size:14px;color:red;"> Dagsmål: 5664.81/32200 km </p>
 
 <div id="progressStatus">
-  <div id="myProgressBar" style="width:19.44%;"></div>
-  <div class="pctVerticalBar" style="left:17.28%"></div>
+  <div id="myProgressBar" style="width:20.21%;"></div>
+  <div class="pctVerticalBar" style="left:17.59%"></div>
 </div>
 <p class=bottomSpace></p>
 
@@ -71,8 +71,8 @@ div {text-align: center; font-family:Garamond}
 <canvas id="barChart" style="width:75%;max-width:700px"></canvas>
 </div>
 <script>
-const week_nr = ['1', '2', '3', '4', '5', '6', '7', '8'];
-const km_week = [631.1, 882.4, 835.4, 784.0, 804.7, 749.1, 841.6, 732.6];
+const week_nr = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
+const km_week = [631.1, 882.4, 835.4, 784.0, 804.7, 749.1, 841.6, 880.4, 97.4];
 new Chart("barChart", {
   type: "bar",
   data: {
@@ -112,9 +112,9 @@ new Chart("barChart", {
     }
   },
 });
-const line_chart_weeks = ['0', '1', '2', '3', '4', '5', '6', '7', '8'];
-const real_tot_week = [32200, 31568.9, 30686.5, 29851.1, 29067.1, 28262.4, 27513.3, 26671.7, 25939.1];
-const goal_tot_week = [32200, 31504.32, 30808.64, 30112.96, 29417.28, 28721.6, 28025.93, 27330.25, 26634.57];
+const line_chart_weeks = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+const real_tot_week = [32200, 31568.9, 30686.5, 29851.1, 29067.1, 28262.4, 27513.3, 26671.7, 25791.3, 25693.9];
+const goal_tot_week = [32200, 31504.32, 30808.64, 30112.96, 29417.28, 28721.6, 28025.93, 27330.25, 26634.57, 25938.89];
 new Chart("lineChart", {
   type: "line",
   data: {
@@ -162,7 +162,7 @@ new Chart("lineChart", {
 
 </div>
 
-<p style="font-size:14px;color:white;"> Senast uppdaterad: 2024-02-25 12:12:09</p>
+<p style="font-size:14px;color:white;"> Senast uppdaterad: 2024-02-26 19:17:34</p>
 
 </body>
 </html>
