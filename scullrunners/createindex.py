@@ -5,7 +5,7 @@ from jinja2 import Environment, FileSystemLoader
 
 # Constants
 CLUB_LEAD_URL = "https://www.strava.com/clubs/495789/leaderboard"
-TOTAL_DAYS = 324 # Dagnummer för 19/11
+TOTAL_DAYS = 258 # Dagnummer för 14/9 (160-jubileum)
 GOAL_DISTANCE = 32200
 
 def get_week_nr():
@@ -51,8 +51,8 @@ def write_file():
     km_total = 0
     weeks = []
     km_week = []
-    real_tot_week = [32200]
-    goal_tot_week = [32200]
+    real_tot_week = [GOAL_DISTANCE]
+    goal_tot_week = [GOAL_DISTANCE]
     for key, value in stats.items():
         km_total += value
         weeks.append(key)
