@@ -51,12 +51,12 @@ div {text-align: center; font-family:Garamond}
 <img src="swag-skeleton.gif", class="center"/>
 
 <p style="font-size:22px;color:white;"> Dagsstatus: </p>
-<p style="font-size:14px;color:white;"> Sprungit hittills: 14602.4/32200 km </p>
-<p style="font-size:14px;color:red;"> Dagsmål: 13978.29/32200 km </p>
+<p style="font-size:14px;color:white;"> Sprungit hittills: 14704.8/32200 km </p>
+<p style="font-size:14px;color:red;"> Dagsmål: 14103.1/32200 km </p>
 
 <div id="progressStatus">
-  <div id="myProgressBar" style="width:45.35%;"></div>
-  <div class="pctVerticalBar" style="left:43.41%"></div>
+  <div id="myProgressBar" style="width:45.67%;"></div>
+  <div class="pctVerticalBar" style="left:43.8%"></div>
 </div>
 <p class=bottomSpace></p>
 
@@ -71,8 +71,8 @@ div {text-align: center; font-family:Garamond}
 <canvas id="barChart" style="width:75%;max-width:700px"></canvas>
 </div>
 <script>
-const week_nr = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16'];
-const km_week = [631.1, 882.4, 835.4, 784.0, 804.7, 749.1, 841.6, 886.4, 948.7, 934.8, 959.9, 892.7, 1145.5, 991.6, 1111.5, 1203.0];
+const week_nr = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17'];
+const km_week = [631.1, 882.4, 835.4, 784.0, 804.7, 749.1, 841.6, 886.4, 948.7, 934.8, 959.9, 892.7, 1145.5, 991.6, 1111.5, 1204.9, 100.5];
 new Chart("barChart", {
   type: "bar",
   data: {
@@ -112,9 +112,9 @@ new Chart("barChart", {
     }
   },
 });
-const line_chart_weeks = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16'];
-const real_tot_week = [32200, 31568.9, 30686.5, 29851.1, 29067.1, 28262.4, 27513.3, 26671.7, 25785.3, 24836.6, 23901.8, 22941.9, 22049.2, 20903.7, 19912.1, 18800.6, 17597.6];
-const goal_tot_week = [32200, 31326.36, 30452.71, 29579.07, 28705.43, 27831.78, 26958.14, 26084.5, 25210.85, 24337.21, 23463.57, 22589.92, 21716.28, 20842.64, 19968.99, 19095.35, 18221.71];
+const line_chart_weeks = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17'];
+const real_tot_week = [32200, 31568.9, 30686.5, 29851.1, 29067.1, 28262.4, 27513.3, 26671.7, 25785.3, 24836.6, 23901.8, 22941.9, 22049.2, 20903.7, 19912.1, 18800.6, 17595.7, 17495.2];
+const goal_tot_week = [32200, 31326.36, 30452.71, 29579.07, 28705.43, 27831.78, 26958.14, 26084.5, 25210.85, 24337.21, 23463.57, 22589.92, 21716.28, 20842.64, 19968.99, 19095.35, 18221.71, 17348.06];
 new Chart("lineChart", {
   type: "line",
   data: {
@@ -162,7 +162,7 @@ new Chart("lineChart", {
 
 </div>
 
-<p style="font-size:14px;color:white;"> Senast uppdaterad: 2024-04-21 20:43:17</p>
+<p style="font-size:14px;color:white;"> Senast uppdaterad: 2024-04-22 21:19:09</p>
 
 </body>
 </html>
