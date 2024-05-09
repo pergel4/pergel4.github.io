@@ -3,10 +3,14 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Browser settings
 chrome_options = Options()
-chrome_options.add_argument("--headless")
+#chrome_options.add_argument("--headless")
 
 def create_new_driver(url):
     driver = webdriver.Chrome(options=chrome_options)
@@ -15,7 +19,17 @@ def create_new_driver(url):
     driver.find_element(By.CLASS_NAME,"btn-deny-cookie-banner").click()
     return driver
 
+def log_in(driver, url):
+    driver.find_element(By.CSS_SELECTOR,"a[class='btn btn-default btn-login']").click()
+    username = driver.find_element(By.CSS_SELECTOR,"input[name='email']")
+    username.send_keys(os.getenv('EMAIL'))
+    password = driver.find_element(By.CSS_SELECTOR,"input[name='password']")
+    password.send_keys(os.getenv('PASSWORD'))
+    driver.find_element(By.CSS_SELECTOR,"button[id='login-button']").click()
+    driver.get(url)
+
 def get_this_weeks_total(driver):
+
     driver.find_element(By.CSS_SELECTOR,"span[class='button this-week selected']").click()
     driver.implicitly_wait(2)
     WebDriverWait(driver, 10).until(lambda driver: driver.find_element(By.CSS_SELECTOR, "td[class='distance highlighted-column']").text.strip() != '')

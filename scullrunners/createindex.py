@@ -1,9 +1,10 @@
-from stravascraper import create_new_driver, get_this_weeks_total, get_last_weeks_total
+from stravascraper import create_new_driver, log_in, get_this_weeks_total, get_last_weeks_total
 import datetime
 import json
 from jinja2 import Environment, FileSystemLoader
 
 # Constants
+STRAVA_URL = "https://www.strava.com/"
 CLUB_LEAD_URL = "https://www.strava.com/clubs/495789/leaderboard"
 TOTAL_DAYS = 258 # Dagnummer för 14/9 (160-jubileum)
 GOAL_DISTANCE = 32200
@@ -16,6 +17,7 @@ def get_week_nr():
 def get_stats():
     # Get strava data
     driver = create_new_driver(CLUB_LEAD_URL)
+    log_in(driver, CLUB_LEAD_URL)
     week_nr = get_week_nr()
     current_week = get_this_weeks_total(driver)
     if week_nr != 1:
