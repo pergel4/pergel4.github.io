@@ -15,12 +15,12 @@ chrome_options = Options()
 def create_new_driver(url):
     driver = webdriver.Chrome(options=chrome_options)
     driver.get(url)
-    driver.implicitly_wait(2)
-    driver.find_element(By.CLASS_NAME,"btn-deny-cookie-banner").click()
+    driver.implicitly_wait(20)
+    driver.find_element(By.CSS_SELECTOR,"button[data-cy='deny-cookies']").click()
     return driver
 
 def log_in(driver, url):
-    driver.find_element(By.CSS_SELECTOR,"a[class='btn btn-default btn-login']").click()
+    driver.find_element(By.CSS_SELECTOR,"button[data-cy='login_btn']").click()
     username = driver.find_element(By.CSS_SELECTOR,"input[name='email']")
     username.send_keys(os.getenv('EMAIL'))
     password = driver.find_element(By.CSS_SELECTOR,"input[name='password']")
