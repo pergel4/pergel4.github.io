@@ -50,7 +50,7 @@ def get_stats():
             json.dump(new_stats, file)
 
 def write_file():
-    with open('stats.json', 'r') as file:
+    '''with open('stats.json', 'r') as file:
         stats = json.load(file)
 
     # Fixa variabler till html-fil
@@ -76,14 +76,14 @@ def write_file():
     # Skapa dict för html-variabler
     context = {
     }
-
+'''
     # Sätt ihop html-fil
     template = Environment(loader=FileSystemLoader("./")).get_template("index_temp.html")
     with open('index.html', 'w') as file:
-        file.write(template.render(context))
+        file.write(template.render())
 
 if __name__ == '__main__':
-    get_stats()
+    #get_stats()
     write_file()
     
 
