@@ -70,17 +70,19 @@ def write_file():
     pct_goal_today = round(pct_days_past*100,2)
     pct_total_today = round(km_total/GOAL_DISTANCE*100,2)
     km_goal = round(pct_days_past * GOAL_DISTANCE,2)
-
+'''
+    time_now = datetime.datetime.now()
     update = time_now.strftime("%Y-%m-%d %H:%M:%S")
 
     # Skapa dict för html-variabler
     context = {
+        "update": update
     }
-'''
+
     # Sätt ihop html-fil
     template = Environment(loader=FileSystemLoader("./")).get_template("index_temp.html")
     with open('index.html', 'w') as file:
-        file.write(template.render())
+        file.write(template.render(context))
 
 if __name__ == '__main__':
     #get_stats()
