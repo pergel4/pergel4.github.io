@@ -5,7 +5,6 @@
 body {background-color: rgb(194, 229, 241);}
 h1 {text-align: center; color:black; font-family:Garamond; font-size:50px;}
 p {text-align: center; font-family:Garamond;}
-div {text-align: center; font-family:Garamond}
 .chart {
   display: flex;
   justify-content: center;
@@ -39,12 +38,19 @@ div {text-align: center; font-family:Garamond}
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 5%;
 }
 .raceLogo {
   display: block;
-  margin-left: 5%;
-  max-width: 10%;
+  margin-bottom: 5%;
+  max-width: 25%;
+  padding: 2%;
   height: auto;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
@@ -52,21 +58,23 @@ div {text-align: center; font-family:Garamond}
 
 
 <body>
-<h1> Resan mot en Svensk Klassiker </h1>
+<h1> Resan mot en Svensk Klassiker 2025</h1>
 <img src="en_svensk_klassiker.png", class="center"/>
 
-<div>
+<div class="row">
     <img src="vasaloppet.png", class="raceLogo"/>
 
+    <img src="vatternrundan.png", class="raceLogo"/>
+
+    <img src="vansbro.png", class="raceLogo"/>
+
+    <img src="lidingoloppet.png", class="raceLogo"/>
 </div>
 
-<img src="vatternrundan.png", class="raceLogo"/>
 
-<img src="vansbro.png", class="raceLogo"/>
 
-<img src="lidingoloppet.png", class="raceLogo"/>
 
-<p style="font-size:14px;color:black;"> Senast uppdaterad: 2024-10-27 00:28:51</p>
+<p style="font-size:14px;color:black;"> Senast uppdaterad: 2024-10-27 10:13:49</p>
 
 </body>
 </html>
