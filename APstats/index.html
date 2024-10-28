@@ -45,8 +45,15 @@ p {text-align: center; font-family:Garamond;}
   object-fit: contain;
   min-height: 100%;
   width: 100%;
+  grid-column: span 2;
 }
-.row {
+.rowLogos {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 40%;
+  padding: 0 15% 5%;
+  display: grid;
+}
+.rowStats {
   grid-template-columns: 1fr 1fr;
   grid-gap: 40%;
   padding: 0 15% 5%;
@@ -61,12 +68,12 @@ p {text-align: center; font-family:Garamond;}
 <h1> Resan mot en Svensk Klassiker 2025</h1>
 <img src="en_svensk_klassiker.png", class="center"/>
 
-<div class="row">
+<div class="rowLogos">
     <img src="vasaloppet.png", class="raceLogo"/>
 
     <img src="vatternrundan.png", class="raceLogo"/>
 </div>
-<div class="row">
+<div class="rowLogos">
     <img src="vansbro.png", class="raceLogo"/>
 
     <img src="lidingoloppet.png", class="raceLogo"/>
@@ -75,7 +82,7 @@ p {text-align: center; font-family:Garamond;}
 
 
 
-<p style="font-size:14px;color:black;"> Senast uppdaterad: 2024-10-27 22:57:43</p>
+<p style="font-size:14px;color:black;"> Senast uppdaterad: 2024-10-28 15:04:23</p>
 
 </body>
 </html>
