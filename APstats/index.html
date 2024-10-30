@@ -40,25 +40,52 @@ p {text-align: center; font-family:Garamond;}
   margin-right: auto;
   margin-bottom: 5%;
 }
-.raceLogo {
-  float: left;
-  object-fit: contain;
-  min-height: 100%;
-  width: 100%;
-  grid-column: span 2;
-}
 .rowLogos {
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 40%;
-  padding: 0 15% 5%;
-  display: grid;
-}
-.rowStats {
   grid-template-columns: 1fr 1fr;
   grid-gap: 40%;
   padding: 0 15% 5%;
   display: grid;
 }
+.raceLogo {
+  float: left;
+  object-fit: contain;
+  min-height: 100%;
+  width: 100%;
+}
+.rowStats {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20%;
+  padding: 0 10% 5%;
+  display: grid;
+}
+:root {
+  --progress-bar-width: 200px;
+  --progress-bar-height: 200px;
+  --font-size: 2rem;
+}
+
+.circular-progress {
+  width: var(--progress-bar-width);
+  height: var(--progress-bar-height);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inner-circle {
+  position: absolute;
+  width: calc(var(--progress-bar-width) - 30px);
+  height: calc(var(--progress-bar-height) - 30px);
+  border-radius: 50%;
+  background-color: lightgrey;
+}
+
+.percentage {
+  position: relative;
+  font-size: var(--font-size);
+  color: rgb(0, 0, 0, 0.8);
+}
+
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 </head>
@@ -71,7 +98,17 @@ p {text-align: center; font-family:Garamond;}
 <div class="rowLogos">
     <img src="vasaloppet.png", class="raceLogo"/>
 
-    <img src="vatternrundan.png", class="raceLogo"/>
+    <img src="vatternrundan.png", class="raceLogo", style="margin-bottom: 5%;"/>
+</div>
+<div class="rowStats">
+    <div class="circular-progress" data-inner-circle-color="lightgrey" data-percentage="80" data-progress-color="crimson" data-bg-color="black">
+        <div class="inner-circle"></div>
+        <p class="percentage">0%</p>
+    </div>
+    <div class="circular-progress" data-inner-circle-color="lightgrey" data-percentage="80" data-progress-color="crimson" data-bg-color="black">
+        <div class="inner-circle"></div>
+        <p class="percentage">0%</p>
+    </div>
 </div>
 <div class="rowLogos">
     <img src="vansbro.png", class="raceLogo"/>
@@ -82,7 +119,7 @@ p {text-align: center; font-family:Garamond;}
 
 
 
-<p style="font-size:14px;color:black;"> Senast uppdaterad: 2024-10-28 15:04:23</p>
+<p style="font-size:14px;color:black;"> Senast uppdaterad: 2024-10-30 22:17:57</p>
 
 </body>
 </html>
