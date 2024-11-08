@@ -53,10 +53,16 @@ p {text-align: center; font-family:Garamond;}
   width: 100%;
 }
 .rowStats {
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  /*grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 5%;
   padding: 0 10% 5%;
-  display: grid;
+  display: grid;*/
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color:lightblue;
+  height: 100vh;
+  align-items: center;
 }
 * {
   box-sizing: border-box;
@@ -75,7 +81,6 @@ p {text-align: center; font-family:Garamond;}
   text-align: center;
   line-height: 200px;
   margin: 20px;
-  box-shadow: 2px 2px 2px 2px white;
 }
 .progress::after {
   content: "%";
